@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tarifs - Wifi Zone</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card wide">
+    <h1>Nos tarifs</h1>
+    <p class="sub">Choisissez le forfait qui vous convient</p>
+
+    <div class="plans">
+      <div class="plan">
+        <h2>1 heure</h2>
+        <p class="price">100 <span>FCFA</span></p>
+        <ul><li>Pour un besoin rapide</li><li>Connexion illimitée</li></ul>
+        <button class="btn buy" data-forfait="1 heure" data-prix="100">Acheter</button>
+      </div>
+
+      <div class="plan featured">
+        <span class="badge">Populaire</span>
+        <h2>24 heures</h2>
+        <p class="price">300 <span>FCFA</span></p>
+        <ul><li>Le plus choisi</li><li>Connexion illimitée</li></ul>
+        <button class="btn buy" data-forfait="24 heures" data-prix="300">Acheter</button>
+      </div>
+
+      <div class="plan">
+        <h2>7 jours</h2>
+        <p class="price">1 500 <span>FCFA</span></p>
+        <ul><li>Idéal pour la semaine</li><li>Connexion illimitée</li></ul>
+        <button class="btn buy" data-forfait="7 jours" data-prix="1500">Acheter</button>
+      </div>
+
+      <div class="plan">
+        <h2>30 jours</h2>
+        <p class="price">5 000 <span>FCFA</span></p>
+        <ul><li>Le meilleur prix par jour</li><li>Connexion illimitée</li></ul>
+        <button class="btn buy" data-forfait="30 jours" data-prix="5000">Acheter</button>
+      </div>
+    </div>
+
+    <a href="index.html" class="back">Retour</a>
+  </main>
+
+  <!-- Pop-up d’achat -->
+  <div class="overlay" id="overlay">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+      <button class="close" id="closeBtn" aria-label="Fermer">×</button>
+
+      <div id="stepForm">
+        <h3 id="mTitle">Confirmer l’achat</h3>
+        <div class="summary">
+          <div><span>Forfait</span><strong id="mForfait"></strong></div>
+          <div><span>Total</span><strong id="mPrix"></strong></div>
+        </div>
+
+        <p class="label">Choisissez votre opérateur</p>
+        <div class="ops">
+          <label class="op mtn">
+            <input type="radio" name="operator" value="MTN MoMo">
+            <span>
+              <img src="images/mtn.png" alt="MTN">
+              <small>MTN MoMo</small>
+            </span>
+          </label>
+          <label class="op moov">
+            <input type="radio" name="operator" value="Moov Money">
+            <span>
+              <img src="images/moov.png" alt="Moov">
+              <small>Moov Money</small>
+            </span>
+          </label>
+        </div>
+
+        <label class="label" for="phone" id="phoneLabel">Numéro Mobile Money</label>
+        <input type="tel" id="phone" placeholder="Ex : 97 00 00 00">
+        <p class="err" id="err"></p>
+        <button class="btn" id="payBtn">Payer maintenant</button>
+      </div>
+
+      <div id="stepLoad" class="center hidden">
+        <div class="spinner"></div>
+        <p>Paiement en cours…</p>
+      </div>
+
+      <div id="stepOk" class="center hidden">
+        <div class="check">✓</div>
+        <h3>Paiement réussi</h3>
+        <p class="sub">Votre code de connexion</p>
+        <div class="code" id="code"></div>
+        <button class="btn" id="doneBtn">Terminer</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
